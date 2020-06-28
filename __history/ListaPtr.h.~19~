@@ -1,0 +1,44 @@
+// ---------------------------------------------------------------------------
+
+#ifndef ListaPtrH
+#define ListaPtrH
+
+// ---------------------------------------------------------------------------
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct NodoL {
+	int elemento;
+	NodoL* sig;
+};
+
+class ListaPtr {
+private:
+	NodoL* ptrElementos;
+	int longi;
+
+public:
+	ListaPtr();
+	// Funciones de direccion
+	NodoL* fin();
+	NodoL* primero();
+	NodoL* siguiente(NodoL*);
+	NodoL* anterior(NodoL*);
+	// Selector
+	int recupera(NodoL*);
+	// modificadores
+	void inserta(NodoL*, int);
+	void suprime(NodoL*);
+	void modifica(NodoL*, int);
+	//
+	bool vacia();
+	int longitud();
+	string toStr();
+	//
+	NodoL* localiza(int);
+	void elimina_dato(int);
+	void anula();
+};
+#endif
